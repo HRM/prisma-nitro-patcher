@@ -14,12 +14,12 @@ describe('patchPrisma for prisma version 5.19.1', () => {
   beforeAll(async ()=>{
     const [contents,patchedContents,incorrectContents] = await Promise.all([
       await readFile(
-        path.join('.', 'test', 'files', 'ver-5.19.1', 'index.txt'),
+        path.join('.', 'tests', 'files', 'ver-5.19.1', 'index.txt'),
       ),
       await readFile(
         path.join(
           '.',
-          'test',
+          'tests',
           'files',
           'ver-5.19.1',
           'index-patched.txt',
@@ -28,7 +28,7 @@ describe('patchPrisma for prisma version 5.19.1', () => {
       await readFile(
         path.join(
           '.',
-          'test',
+          'tests',
           'files',
           'ver-5.19.1',
           'index-incorrect.txt',
@@ -41,23 +41,7 @@ describe('patchPrisma for prisma version 5.19.1', () => {
   })
 
   it('applies a correct patch', async () => {
-    const contents = String(
-      await readFile(
-        path.join('.', 'test', 'files', 'ver-5.19.1', 'index.txt'),
-      ),
-    );
-    const patched = String(
-      await readFile(
-        path.join(
-          '.',
-          'test',
-          'files',
-          'ver-5.19.1',
-          'index-patched.txt',
-        ),
-      ),
-    );
-    expect(patched).toBe(patchPrisma(contents));
+    expect(testData.patchedContents).toBe(patchPrisma(testData.contents));
   });
   it('throws a error if the input is already patched', ()=>{
       expect.hasAssertions();

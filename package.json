@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Applies a patch on the prisma client to improve the performance of extensions",
   "main": "dist/index.js",
+  "files": [ "dist" ],
   "bin": {
     "prisma-nitro-patcher": "dist/cli.js"
   },
@@ -12,7 +13,7 @@
     "coverage": "jest --coverage",
     "prettier": "prettier -w src/**/*.ts",
     "lint": "eslint src/**/*.ts",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "keywords": [
     "prisma",
@@ -23,6 +24,7 @@
   ],
   "author": "Tamás Török",
   "license": "ISC",
+  "homepage": "https://github.com/HRM/prisma-nitro-patcher#readme",
   "dependencies": {
     "@prisma/generator-helper": "5.19.1",
     "@prisma/internals": "5.19.1",
@@ -40,7 +42,8 @@
     "prisma": "5.19.1",
     "ts-jest": "29.2.5",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.4.0"
+    "typescript-eslint": "^8.4.0",
+    "husky":"9.1.5"
   },
   "lint-staged": {
     "src/**/*.ts": [
