@@ -20,7 +20,7 @@
     ```
 3. run `prisma generate`, this will automatically generate and patch the prisma client
 
-Alternatively you can also use this tool trough cli: `npx prisma-nitro-patcher`
+Alternatively you can also use this tool trough cli: `npx prisma-nitro-patcher-cli`
 
 ---
 The patch was tested with prisma version 5.19.1 and typescript version 5.5.4. If you have any findings, problems feel free to open an issue.

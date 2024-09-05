@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { generatorHandler } from '@prisma/generator-helper';
 import { patchPrisma } from './patchPrisma';
 import path from 'path';

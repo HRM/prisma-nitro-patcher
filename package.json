@@ -1,11 +1,11 @@
 {
   "name": "prisma-nitro-patcher",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Applies a patch on the prisma client to improve the performance of extensions",
-  "main": "dist/index.js",
   "files": [ "dist" ],
   "bin": {
-    "prisma-nitro-patcher": "dist/cli.js"
+    "prisma-nitro-patcher": "dist/index.js",
+    "prisma-nitro-patcher-cli": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",

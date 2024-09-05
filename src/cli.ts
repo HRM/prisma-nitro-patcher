@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 import { patchPrisma } from './patchPrisma';
 import path from 'node:path';
 import { readFileSync, writeFileSync } from 'node:fs';
