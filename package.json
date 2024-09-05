@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prettier": "prettier -w src/*/**",
+    "coverage": "jest --coverage",
+    "prettier": "prettier -w src/**/*.ts",
     "lint": "eslint src/**/*.ts",
     "prepare": "husky install"
   },
