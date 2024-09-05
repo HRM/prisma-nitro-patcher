@@ -1,0 +1,50 @@
+{
+  "name": "prisma-nitro-patcher",
+  "version": "0.0.1",
+  "description": "Applies a patch on the prisma client to improve the performance of extensions",
+  "main": "dist/index.js",
+  "bin": {
+    "prisma-nitro-patcher": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prettier": "prettier -w src/*/**",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "prisma",
+    "extend",
+    "extension",
+    "speed",
+    "patch"
+  ],
+  "author": "Tamás Török",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/generator-helper": "5.19.1",
+    "@prisma/internals": "5.19.1",
+    "tslib": "^2.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/eslint__js": "^8.42.3",
+    "@types/jest": "29.5.12",
+    "@types/node": "18.18.9",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "29.7.0",
+    "prettier": "3.3.3",
+    "prisma": "5.19.1",
+    "ts-jest": "29.2.5",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
+}
