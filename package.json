@@ -1,6 +1,6 @@
 {
   "name": "prisma-nitro-patcher",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Applies a patch on the prisma client to improve the performance of extensions",
   "files": [ "dist" ],
   "bin": {
