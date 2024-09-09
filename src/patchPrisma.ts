@@ -5,11 +5,11 @@ import { PresentableError } from './util';
  */
 const extendsHookModified = `
 declare type MapExtensionsToClientComposableType<T extends $Extensions.InternalArgs> = {
-  [K in keyof T["client"]]: T["client"][K]
+  [K in keyof T["client"]]: ReturnType<T["client"][K]>
 }& {
   [K in keyof Omit<T["model"],"$allModels">]: {
-    [O in keyof T["model"][K]]:T["model"][K][O]
-  } & (T["model"]["$allModels"] extends object?{[O in keyof T["model"]["$allModels"]]:T["model"]["$allModels"][O]}:unknown)
+    [O in keyof T["model"][K]]:ReturnType<T["model"][K][O]>
+  } & (T["model"]["$allModels"] extends object?{[O in keyof T["model"]["$allModels"]]:ReturnType<T["model"]["$allModels"][O]>}:unknown)
 }
 
 declare interface ExtendsHookModified<Variant extends 'extends' | 'define', TypeMapCb extends $Extensions.TypeMapCbDef, ExtArgs extends Record<string, any>, TypeMap extends $Extensions.TypeMapDef = $Utils.Call<TypeMapCb, {
