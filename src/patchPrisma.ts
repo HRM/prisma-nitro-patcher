@@ -73,7 +73,8 @@ export function patchPrisma(contents: string): string {
   }
   if (
     contents.indexOf('runtime.Types.Result') == -1 ||
-    contents.indexOf('$extends: $Extensions.ExtendsHook') == -1
+    contents.indexOf('$extends: $Extensions.ExtendsHook') == -1 ||
+    contents.indexOf('$transaction<R>(fn: (prisma: Omit<PrismaClient') == -1
   ) {
     throw new PresentableError(
       'The prisma version or file provided is not compatible with patching',
@@ -85,8 +86,13 @@ export function patchPrisma(contents: string): string {
     1,
     extendsHookModified,
   );
-  return contentWithPatchType.replace(
-    '$extends: $Extensions.ExtendsHook',
-    '$extends: ExtendsHookModified',
-  );
+  return contentWithPatchType
+    .replace(
+      '$extends: $Extensions.ExtendsHook',
+      '$extends: ExtendsHookModified',
+    )
+    .replace(
+      '$transaction<R>(fn: (prisma: Omit<PrismaClient',
+      '$transaction<R>(fn: (prisma: Omit<this',
+    );
 }
