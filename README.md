@@ -24,5 +24,5 @@ Depending on your use case, this patch can improve typing performance, potential
 Alternatively you can also use this tool trough cli: `npx prisma-nitro-patcher-cli`
 
 ---
-The patch was tested with prisma version 5.19.1 and typescript version 5.5.4. If you have any findings, problems feel free to open an issue.
+The patch was tested with prisma version 5.19.1, 5.20.0 and typescript version 5.5.4. If you have any findings, problems feel free to open an issue.
  
